@@ -14,7 +14,7 @@ public class UserRequest {
     @Size(min = 3)
     private String username;
     @NotNull
-    @Size(min = 6, max = 30)
+    @Size(min = 6, max = 30,message = "密码必须为6-30位之间")
     private String password;
     @Email
     @NotNull
