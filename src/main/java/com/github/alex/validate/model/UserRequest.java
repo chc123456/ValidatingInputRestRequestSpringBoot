@@ -9,6 +9,7 @@ import javax.validation.constraints.Size;
 public class UserRequest {
     private Long id;
     @NotNull
+    @Size(min = 3)
     private String username;
     @NotNull
     @Size(min = 6, max = 30)
