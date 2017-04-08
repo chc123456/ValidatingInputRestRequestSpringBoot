@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,8 +25,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-
-import javax.websocket.server.PathParam;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -42,7 +41,7 @@ public class UserResource {
 
     @PostMapping
     @ApiOperation(value = "新增用户", notes = "新增用户")
-    public ResponseEntity<User> createUser(@RequestBody UserRequest request) throws URISyntaxException {
+    public ResponseEntity<User> createUser(@Validated @RequestBody UserRequest request) throws URISyntaxException {
         log.debug("REST request to create User: {}", request);
         User user = new User();
         BeanUtils.copyProperties(request, user);

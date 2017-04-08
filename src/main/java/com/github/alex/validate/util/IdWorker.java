@@ -1,11 +1,5 @@
 package com.github.alex.validate.util;
 
-/**
- * Created by LLWL Xi'an Team.
- * User:CHC
- * Date:2015/1/30
- */
-
 public class IdWorker {
     private final long workerId;
     private final static long twepoch = 1361753741828L;
